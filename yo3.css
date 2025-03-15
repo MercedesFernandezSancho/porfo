@@ -1,0 +1,83 @@
+body {
+    background-color: #C3C3C3;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.window {
+    width: 80%;
+    max-width: 600px;
+    background: #FFFFFF;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px #808080;
+    margin: 50px auto;
+    padding: 10px;
+    text-align: left;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #000080, #0000A0);
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar .buttons {
+    display: flex;
+}
+
+.title-bar .buttons div {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    background: red;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.title-bar .buttons div:nth-child(2) {
+    background: yellow;
+}
+
+.title-bar .buttons div:nth-child(3) {
+    background: green;
+}
+
+.content {
+    padding: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 0px gray;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

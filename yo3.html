@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Estilo GEOS</title>
+    <link rel="stylesheet" href="yo3.css">
+    <style>
+        body {
+            background-color: #C3C3C3;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .window {
+            width: 80%;
+            max-width: 600px;
+            background: #FFFFFF;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0px #808080;
+            margin: 50px auto;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .title-bar {
+            background: linear-gradient(to right, #000080, #0000A0);
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-bar .buttons {
+            display: flex;
+        }
+
+        .title-bar .buttons div {
+            width: 12px;
+            height: 12px;
+            margin-left: 5px;
+            background: red;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .card {
+            background: white;
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 2px 2px 0px gray;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Mi Portafolio</span>
+            <div class="buttons">
+                <div></div>
+                <div style="background: yellow;"></div>
+                <div style="background: green;"></div>
+            </div>
+        </div>
+        <div class="content">
+            <p>¡Hola! Soy una programadora Front-End con experiencia en HTML, CSS, JavaScript y más. Aquí están algunos de mis proyectos:</p>
+            <div class="grid-container" id="projects-grid">
+                <!-- Proyectos se agregarán dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const projects = [
+                { title: "Proyecto 1", image: "https://via.placeholder.com/150", link: "#" },
+                { title: "Proyecto 2", image: "https://via.placeholder.com/150", link: "#" },
+                { title: "Proyecto 3", image: "https://via.placeholder.com/150", link: "#" }
+            ];
+
+            const container = document.getElementById("projects-grid");
+
+            projects.forEach(project => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+                    <a href="${project.link}">
+                        <img src="${project.image}" alt="${project.title}">
+                        <p>${project.title}</p>
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        });
+    </script>
+    <script src="./yo3.js"></script>
+</body>
+</html>
